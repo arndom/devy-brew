@@ -1,0 +1,17 @@
+.landing{
+    /* padding: 0 100px; */
+}
+
+.landing__banner{
+    background: linear-gradient(to right, #283048, #859398);
+    color: #ffffff;
+    height: 80vh;
+    padding: 0 100px;
+
+    /* width: 100vw; */
+}
+
+.landing__bannerImage{
+    background-color: white;
+    border-radius: 15px; 
+}
