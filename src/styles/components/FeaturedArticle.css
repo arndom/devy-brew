@@ -1,0 +1,37 @@
+.featuredArticle{
+    border-bottom: 1px solid #cacaca;
+    /* padding:20px 0; */
+    /* height: 33%; */
+
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    margin: 0 0 20px 0;
+    padding: 0 20px 20px 20px;
+}
+
+.featuredArticle__left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 50%;
+    margin:auto;
+}
+
+.featuredArticle__left > h4{
+    margin-bottom: 15%;
+}
+
+.featuredArticle__right{
+    background-color: black;
+
+    display: flex;
+    align-items: center;
+
+    width: 150px;
+    height: 150px;
+    margin: auto;
+
+    border-radius: 10px;
+}

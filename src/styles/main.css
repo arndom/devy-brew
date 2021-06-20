@@ -1,4 +1,5 @@
 @import "./pages/Landing.css";
+@import "./components/FeaturedArticle.css";
 
 *{
     margin: 0;
