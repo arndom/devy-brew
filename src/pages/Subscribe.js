@@ -1,6 +1,9 @@
 import { Box, Button, TextField, FormGroup, FormControlLabel, Checkbox, makeStyles} from '@material-ui/core'
 import { MailOutlined} from '@material-ui/icons'
 import React from 'react'
+import { useHistory } from 'react-router-dom'
+import Footer from '../components/Footer'
+import * as ROUTES from "../constants/routes"
 
 const useStyles = makeStyles({
 
@@ -24,7 +27,10 @@ const useStyles = makeStyles({
 })
 
 function Subscribe() {
+
     const classes = useStyles()
+
+    const history = useHistory();
     
     const [checked, setChecked] = React.useState({
         articles: true,
@@ -42,20 +48,17 @@ function Subscribe() {
     return (
         <Box
             display = "flex"
+            flexDirection ="column"
             justifyContent = "center"
-            // alignItems = "center"
+            alignItems = "center"
         >
             <Box
                 width = "90vw"
                 height = "100vh"
-
                 display = "flex"
                 justifyContent = "space-around"
-                // alignItems = "center"
                 marginTop = "25vh"
-
             >
-
                 <Box
                     marginTop = "12.5vh"  
                 >
@@ -159,18 +162,20 @@ function Subscribe() {
                         }}
                     />
 
-                    <Button style={{
-                                color: "white",
-                                background: "#1C7FF2",
-                                // flex: 0,
-                                textTransform: "none"
-                            }}>
+                    <Button 
+                        style={{
+                            color: "white",
+                            background: "#1C7FF2",
+                            textTransform: "none"
+                        }}
+                        onClick = {()=> history.push(ROUTES.SUBSCRIBE.FINAL)}
+                    >
                             <MailOutlined/> Good 2 Go
                     </Button>
                 </Box>
 
             </Box>
-
+            <Footer/>
         </Box>
     )
 }

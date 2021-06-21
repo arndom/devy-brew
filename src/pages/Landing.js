@@ -1,10 +1,15 @@
 import { Button} from '@material-ui/core'
 import { CropSquare, MailOutlined } from '@material-ui/icons'
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import FeaturedArticle from '../components/FeaturedArticle'
 import Footer from '../components/Footer'
+import * as ROUTES from "../constants/routes"
 
 function Landing() {
+
+    const history = useHistory();
+
     return (
         <div className = "landing">
 
@@ -18,13 +23,15 @@ function Landing() {
                             <h1>Devy brew</h1>
                             <p>some nice wordings...</p>
                         </div>
-                        <Button style={{
-                            color: "white",
-                            background: "linear-gradient(to right, #232526, #414345)",
-                            // flex: 0,
-                            textTransform: "none"
-                        }}>
-                        <MailOutlined/> Subscribe
+                        <Button 
+                            style={{
+                                color: "white",
+                                background: "linear-gradient(to right, #232526, #414345)",
+                                textTransform: "none"
+                            }}
+                            onClick = {()=>history.push(ROUTES.SUBSCRIBE.INDEX)}
+                        >
+                            <MailOutlined/> Subscribe
                         </Button>
                     </div>
 
@@ -131,12 +138,15 @@ function Landing() {
                         </div>
 
                         <div className = "landing__call2ActionRightBottom">
-                            <Button style={{
-                                color: "white",
-                                background: "linear-gradient(to right, #232526, #414345)",
-                                // flex: 0,
-                                textTransform: "none"
-                            }}>
+                            <Button 
+                                style={{
+                                    color: "white",
+                                    background: "linear-gradient(to right, #232526, #414345)",
+                                    // flex: 0,
+                                    textTransform: "none"
+                                }}
+                                onClick = {()=>history.push(ROUTES.SUBSCRIBE.INDEX)}
+                            >
                                 <MailOutlined/> Try it
                             </Button>
                         </div>

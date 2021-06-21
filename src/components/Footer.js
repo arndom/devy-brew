@@ -17,12 +17,15 @@ function Footer() {
     return (
         <Box
             className = {classes.root}
-            height = "10vh"
+            width = "100%"
+            height = "8vh"
             display = "flex"
             justifyContent = "center"
             alignItems = "center"
+            fontSize = "small"
+            fontWeight = "500"
         >
-            <h4>Built with 💖 by arndom</h4>
+            <p>Built with 💖 by <a href="https://github.com/arndom" target = "_blank"  rel="noreferrer" style={{color: "white", textDecoration: "none"}}>arndom</a></p>
         </Box>
     )
 }

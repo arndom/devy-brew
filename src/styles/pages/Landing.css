@@ -99,7 +99,7 @@
 
     height: 100%;
 
-    background-color: papayawhip;
+    background-color: white;
 }
 
 .landing__funJokes{
@@ -115,8 +115,8 @@
 }
 
 .landing__funJokesContent{
-    /* background: papayawhip; */
-    background: white;
+    background: papayawhip;
+    /* background: white; */
     border-radius: 5px;
 
     width: 100%;
@@ -129,7 +129,7 @@
 
     border-radius: 5px;
     /* background: linear-gradient(to right, #283048, #859398);*/
-     background: white;   
+     background: papayawhip;   
 }
 
 .landing__call2Action{
