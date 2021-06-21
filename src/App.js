@@ -2,6 +2,8 @@ import './App.css';
 import * as ROUTES from "./constants/routes"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from './pages/Landing';
+import Final from './pages/Final';
+import Subscribe from './pages/Subscribe';
 
 function App() {
   return (
@@ -10,6 +12,9 @@ function App() {
         <Switch>
 
           <Route exact path ={ROUTES.LANDING} component = {Landing} />
+
+          <Route exact path = {ROUTES.SUBSCRIBE.INDEX} component = {Subscribe} />
+          <Route exact path = {ROUTES.SUBSCRIBE.FINAL} component = {Final} />
 
         </Switch>
       </Router>
