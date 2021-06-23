@@ -7,7 +7,7 @@ import FeaturedArticle from '../components/FeaturedArticle'
 import Footer from '../components/Footer'
 import * as ROUTES from "../constants/routes"
 
-const KEY = 'zdKqGTp2CIp2CdXuC9OOIr52heL5FUGB6p5SddgBQHk';
+const KEY =  process.env.REACT_APP_PRODUCTHUNT_KEY;
 
 function Landing() {
 
