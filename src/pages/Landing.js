@@ -211,7 +211,7 @@ function Landing() {
                                 <Button
                                     style={{
                                         color: "white",
-                                        background: "linear-gradient(to right, #24C6DC, #514A9D)",
+                                        background: "linear-gradient(to right, #859398, #1C7FF2)",
                                         flex: 0,
                                         textTransform: "none",
                                         marginTop: "10px"
