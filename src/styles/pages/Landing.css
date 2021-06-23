@@ -114,9 +114,9 @@
 }
 
 .landing__funJokes{
-    width: 50%;
-    height: 90%;
-    /* background: linear-gradient(to right, #283048, #859398); */
+    width: 38%;
+    height: 50%;
+
     border-radius: 5px;
 
     display: flex;
@@ -126,16 +126,38 @@
 }
 
 .landing__funJokesContent{
-    background: papayawhip;
-    /* background: white; */
+    background: linear-gradient(to right, #757F9A, #D7DDE8);
     border-radius: 5px;
 
     width: 100%;
     height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing__funJokesContent > p{
+    overflow-y: scroll;
+    word-wrap: break-word;
+    text-align: center;
+    
+    width: 80%;
+    /* height: 60%; */
+    line-height: 2.1rem;
+    letter-spacing: 0.2px;
+    font-size: 1em;
+    
+    /* padding: 10% 0; */
+}
+
+.landing__funJokesContent > p::-webkit-scrollbar{
+    display: none;
 }
 
 .landing__funGames{
-    width: 45%;
+    width: 60%;
     height: 90%;
 
     border-radius: 5px;

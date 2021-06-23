@@ -7,7 +7,11 @@ import FeaturedArticle from '../components/FeaturedArticle'
 import Footer from '../components/Footer'
 import * as ROUTES from "../constants/routes"
 
-const KEY =  process.env.REACT_APP_PRODUCTHUNT_KEY;
+const producthuntKey =  process.env.REACT_APP_PRODUCTHUNT_KEY;
+const rapidApiKey = process.env.REACT_APP_RAPID_KEY;
+
+const geekJokes = "https://geek-jokes.p.rapidapi.com/api?format=json";
+// const ninJokes = "https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes";
 
 function Landing() {
 
@@ -16,10 +20,12 @@ function Landing() {
     const [dev, setDev] = useState({});
     const [hashnode, setHashnode] = useState({});
     const [product, setProduct] = useState({});
+    const [joke, setJoke] =  useState("");
+
 
     async function fetchDev(){
         const response = await axios.get("https://dev.to/api/articles")
-        console.log(response.data[0])
+        // console.log(response.data[0])
         setDev(response.data[0])
     }
 
@@ -43,7 +49,7 @@ function Landing() {
                   }
             `
         })
-        console.log(response.data.data.storiesFeed[0])
+        // console.log(response.data.data.storiesFeed[0])
         setHashnode(response.data.data.storiesFeed[0])
     }
 
@@ -77,15 +83,30 @@ function Landing() {
         },
         {
             headers: {
-                Authorization: `Bearer ${KEY}`,
+                Authorization: `Bearer ${producthuntKey}`,
                 Accept: "application/json",
                 "Content-Type": "application/json"
             },
         }
 
         )
-        console.log(response.data.data.posts.edges[0].node)
+        // console.log(response.data.data.posts.edges[0].node)
         setProduct(response.data.data.posts.edges[0].node)
+
+    }
+
+    async function fetchJokes(){
+        // var chosenJokeURL = Math.random() < 0.5 ? geekJokes : ninJokes;
+
+        const response = await axios.get(geekJokes,{
+            headers:{
+                'x-rapidapi-key': rapidApiKey,
+                'x-rapidapi-host': "geek-jokes.p.rapidapi.com",
+            }
+        })
+        console.log(response.data.joke)
+        setJoke(response.data.joke)
+        
 
     }
 
@@ -93,6 +114,7 @@ function Landing() {
         fetchDev()
         fetchHashnode()
         fetchProduct()
+        fetchJokes()
     },[])
 
     return (
@@ -105,7 +127,7 @@ function Landing() {
                     {/* text */}
                     <div className = "landing__bannerLeft">
                         <div>
-                            <h1>Devy brew</h1>
+                            <h1>Devy brew ☕</h1>
                             <p>some nice wordings...</p>
                         </div>
                         <Button 
@@ -184,23 +206,29 @@ function Landing() {
                         {/* jokes */}
                         <div className = "landing__funJokes">
                             <div className = "landing__funJokesContent">
+                                <p>{joke}</p>
 
+                                <Button
+                                    style={{
+                                        color: "white",
+                                        background: "linear-gradient(to right, #24C6DC, #514A9D)",
+                                        flex: 0,
+                                        textTransform: "none",
+                                        marginTop: "10px"
+                                    }}
+                                    onClick={()=>fetchJokes()}
+                                >
+                                    More 
+                                </Button>                                
                             </div>
 
-                            <Button style={{
-                                color: "white",
-                                background: "linear-gradient(to right, #24C6DC, #514A9D)",
-                                flex: 0,
-                                textTransform: "none"
-                            }}>
-                                More 
-                            </Button>
+
 
                         </div>
                         
                         {/* games */}
                         <div className = "landing__funGames">
-                    
+                            
                         </div>
                     </div>
 
