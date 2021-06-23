@@ -56,9 +56,12 @@
     border: 0px solid black;
     border-radius: 5px;
     background: #1C7FF2;
-
-    cursor: pointer; 
-
+    
+    background-image: url("https://picsum.photos/seed/picsum/1000");
+    background-size:     cover;        
+    background-repeat:   no-repeat;
+    background-position: center center;
+   
     width: 62%;
     height: 100%;
 
@@ -75,7 +78,11 @@
 
     width: 95%;
     height: 30%;
+    z-index: 100;
+    position: sticky;
 }
+
+
 
 .landing__featuredArticles{
     /* display:"flex";
@@ -89,6 +96,10 @@
 .landing__featuredArticles > h1{
     /* margin: 0 0 20px 0; */
     margin-bottom: 20px;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 600;
+    margin-top: 1rem;
 }
 
 .landing__fun{
@@ -184,7 +195,13 @@
 
 .landing__call2ActionRight{
     background: white;
-    color: black;
+
+    background-image: url("https://picsum.photos/id/204/1000");
+    background-size:     cover;        
+    background-repeat:   no-repeat;
+    background-position: center center;
+
+    color: white;
 
     border-radius: 5px;
     width: 52%;
@@ -195,8 +212,13 @@
     align-items: center;
 }
 
+.landing__call2ActionRightTop > p{
+    font-size: 2.5rem;
+    font-family: "Pacifico";
+}
+
 .landing__call2ActionRightTop{
-    padding-top: 25%;
+    padding-top: 30%;
     padding-bottom: 5%;
 
     width: 50%;
