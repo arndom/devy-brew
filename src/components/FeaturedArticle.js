@@ -14,7 +14,7 @@ function FeaturedArticle({title, text, link, author, date, image}) {
                 </div>
 
                 <div className = "featuredArticle__right">
-                    <img src = {image?  image : 'https://picsum.photos/seed/picsum/200' } alt ="cover"/>
+                    <img src = {image?  image : 'https://picsum.photos/200' } alt ="cover"/>
                 </div>
             </a>
         </div>

@@ -106,8 +106,6 @@ function Landing() {
         })
         console.log(response.data.joke)
         setJoke(response.data.joke)
-        
-
     }
 
     useEffect(()=>{
@@ -126,19 +124,21 @@ function Landing() {
                     
                     {/* text */}
                     <div className = "landing__bannerLeft">
-                        <div>
+                        <div className = "landing__bannerLeftText">
                             <h1>Devy brew ☕</h1>
-                            <p>some nice wordings...</p>
+                            <p>Get daily mails curated with articles from the most popular dev plattforms, fun games and geeky jokes. Make us part of your daily routine to stay informed and entertained.</p>
                         </div>
                         <Button 
                             style={{
                                 color: "white",
                                 background: "linear-gradient(to right, #232526, #414345)",
-                                textTransform: "none"
+                                // background: "linear-gradient(to right, #514A9D, #24C6DC)",
+                                textTransform: "none",
+                                width: "8rem"
                             }}
                             onClick = {()=>history.push(ROUTES.SUBSCRIBE.INDEX)}
                         >
-                            <MailOutlined/> Subscribe
+                            <MailOutlined style ={{paddingRight: "5px"}}/> Subscribe
                         </Button>
                     </div>
 
@@ -166,7 +166,7 @@ function Landing() {
 
                         {/* top featured */}
                         <div className = "landing__featuredArticles">
-                            <h1>Top featured articles</h1>
+                            <h1>Top featured</h1>
 
                             <FeaturedArticle 
                                 title = "Hashnode"
@@ -206,12 +206,12 @@ function Landing() {
                         {/* jokes */}
                         <div className = "landing__funJokes">
                             <div className = "landing__funJokesContent">
-                                <p>{joke}</p>
+                                <p><b>"</b> {joke} <b>"</b></p>
 
                                 <Button
                                     style={{
                                         color: "white",
-                                        background: "linear-gradient(to right, #859398, #1C7FF2)",
+                                        background: "linear-gradient(to right, #514A9D, #24C6DC)",
                                         flex: 0,
                                         textTransform: "none",
                                         marginTop: "10px"
