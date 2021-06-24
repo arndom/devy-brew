@@ -17,7 +17,7 @@
     background: #1C7FF2;
     color: #ffffff;
 
-    height: 90vh;
+    height: 95vh;
 
     display: flex;
     justify-content: center;
@@ -77,11 +77,12 @@
     /* background-color: papayawhip; */
 }
 
-.landing__topArticle{
+.landing__latestRelease{
     border: 0px solid black;
     border-radius: 5px;
     background: #1C7FF2;
-    
+    box-shadow:  0px 6px 18px -9px rgba(0,0,0, 0.75);
+
     background-image: url("https://picsum.photos/1000");
     background-size:     cover;        
     background-repeat:   no-repeat;
@@ -95,16 +96,50 @@
     align-items: flex-end;
 }
 
-.landing__topArticleContent{
+.landing__latestReleaseContent{
     background-color: whitesmoke;
+    color: black;
     border-radius: 5px;
     
-    margin-bottom: 2.5%;
+    margin: 0 2.5% 2.5% 2.5%;
 
-    width: 95%;
-    height: 30%;
-    z-index: 100;
-    position: sticky;
+    width: 100%;
+    height: 25%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+}
+
+.landing__latestReleaseTitle{
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 0.055rem;
+    color: #1C7FF2;
+}
+
+.landing__latestReleaseTagline > a{
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #66727e;
+    text-decoration: none;
+}
+
+.landing__latestReleaseDate{
+    color: #95A0AB;
+    font-weight: 500;
+    letter-spacing: 0.055rem;
+    font-size: 0.8rem;
+}
+
+.landing__latestReleaseHeadline{
+    font-size: 1.8rem;
+    /* margin-bottom: 0.75rem; */
+    line-height: 1.25;
+    font-weight: 600;
 }
 
 

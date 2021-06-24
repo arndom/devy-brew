@@ -1,8 +1,8 @@
 import { Button} from '@material-ui/core'
-import { CropSquare, MailOutlined } from '@material-ui/icons'
+import { ArrowForward, CropSquare, MailOutlined} from '@material-ui/icons'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import FeaturedArticle from '../components/FeaturedArticle'
 import Footer from '../components/Footer'
 import * as ROUTES from "../constants/routes"
@@ -21,11 +21,10 @@ function Landing() {
     const [hashnode, setHashnode] = useState({});
     const [product, setProduct] = useState({});
     const [joke, setJoke] =  useState("");
-
+    const dateNow = new Date().toLocaleDateString() 
 
     async function fetchDev(){
         const response = await axios.get("https://dev.to/api/articles")
-        // console.log(response.data[0])
         setDev(response.data[0])
     }
 
@@ -90,9 +89,7 @@ function Landing() {
         }
 
         )
-        // console.log(response.data.data.posts.edges[0].node)
         setProduct(response.data.data.posts.edges[0].node)
-
     }
 
     async function fetchJokes(){
@@ -104,7 +101,7 @@ function Landing() {
                 'x-rapidapi-host': "geek-jokes.p.rapidapi.com",
             }
         })
-        console.log(response.data.joke)
+        // console.log(response.data.joke)
         setJoke(response.data.joke)
     }
 
@@ -158,15 +155,28 @@ function Landing() {
                     <div className = "container splitLR">
 
                         {/* most reacted article */}
-                        <div className = "landing__topArticle">
-                            <div className = "landing__topArticleContent">
-
+                        <div className = "landing__latestRelease">
+                            <div className = "landing__latestReleaseContent">
+                                <p className = "landing__latestReleaseTitle">
+                                    ☕ JOE CODEnp 
+                                </p>
+                                <p className = "landing__latestReleaseHeadline">
+                                    Temp issue headline
+                                </p>
+                                <p className = "landing__latestReleaseTagline">
+                                    <Link to = "/subscribe">
+                                        Read the latest issue <ArrowForward style={{marginLeft: ".5rem"}}/>
+                                    </Link>
+                                </p>
+                                <p className = "landing__latestReleaseDate">
+                                    {dateNow}
+                                </p>
                             </div>
                         </div>
 
                         {/* top featured */}
                         <div className = "landing__featuredArticles">
-                            <h1>Top featured</h1>
+                            <h1>Top featured articles</h1>
 
                             <FeaturedArticle 
                                 title = "Hashnode"
@@ -205,6 +215,12 @@ function Landing() {
                     <div className = "container splitLR">
                         {/* jokes */}
                         <div className = "landing__funJokes">
+                            <p style={{
+                                fontFamily: "Pacifico",
+                                fontSize: "2rem"
+                            }}>
+                                Jokes
+                            </p>
                             <div className = "landing__funJokesContent">
                                 <p><b>"</b> {joke} <b>"</b></p>
 
@@ -235,8 +251,7 @@ function Landing() {
                 </div>
 
             </div>
-
-            
+        
             {/* call to action */}
             <div className = "landing__call2Action">
                 <div className = "splitLR container">
