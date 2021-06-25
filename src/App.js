@@ -6,6 +6,8 @@ import Final from './pages/Final';
 import Subscribe from './pages/Subscribe';
 
 function App() {
+  <script type="text/javascript" src="https://CrosswordHobbyist.com/embedjs?puzzle_id=262"></script>
+
   return (
     <div className="app">
       <Router>

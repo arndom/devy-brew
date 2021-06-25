@@ -1,11 +1,14 @@
+import React, { useEffect, useState } from 'react'
+import * as ROUTES from "../constants/routes"
+
+import axios from 'axios'
 import { Button} from '@material-ui/core'
 import { ArrowForward, CropSquare, MailOutlined} from '@material-ui/icons'
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+
 import FeaturedArticle from '../components/FeaturedArticle'
 import Footer from '../components/Footer'
-import * as ROUTES from "../constants/routes"
+import Puzzle from '../components/Puzzle'
 
 const producthuntKey =  process.env.REACT_APP_PRODUCTHUNT_KEY;
 const rapidApiKey = process.env.REACT_APP_RAPID_KEY;
@@ -158,7 +161,7 @@ function Landing() {
                         <div className = "landing__latestRelease">
                             <div className = "landing__latestReleaseContent">
                                 <p className = "landing__latestReleaseTitle">
-                                    ☕ JOE CODEnp 
+                                    ☕ JOE CODE
                                 </p>
                                 <p className = "landing__latestReleaseHeadline">
                                     Temp issue headline
@@ -244,7 +247,7 @@ function Landing() {
                         
                         {/* games */}
                         <div className = "landing__funGames">
-                            
+                            <Puzzle/>
                         </div>
                     </div>
 
