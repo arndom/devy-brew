@@ -1,6 +1,6 @@
 import React from 'react'
 // import Embed from 'react-embed';
-// import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet';
 // import ScriptTag from 'react-script-tag';
 // import postscribe from 'postscribe';
 
@@ -68,17 +68,31 @@ function Puzzle() {
         "https://CrosswordHobbyist.com/embedjs?puzzle_id=262"
       );
 
-
+      React.useEffect(() => {
+        const script = document.createElement('script');
+      
+        script.src = "https://CrosswordHobbyist.com/embedjs?puzzle_id=262";
+        script.async = true;
+      
+        document.body.appendChild(script);
+      
+        return () => {
+          document.body.removeChild(script);
+        }
+      }, []);
+      
     return (
         <div id= "puzzle">
 
-            {/* <Helmet>
-                <script src ="https://CrosswordHobbyist.com/embedjs?puzzle_id=262" type="text/javascript"/>
-            </Helmet>     */}
+            <Helmet>
+                {/* <script type="text/javascript" src="https://MyWordSearch.com/embedjs.php?puzzle_id=525976"></script> */}
+            </Helmet>    
             
             {/* <ScriptTag isHydrating={false} type="text/javascript" src="https://CrosswordHobbyist.com/embedjs?puzzle_id=262" /> */}
            
             script status : {status}
+
+            {/* <script type="text/javascript" src="https://MyWordSearch.com/embedjs.php?puzzle_id=525976"></script> */}
         </div>
     )
 }

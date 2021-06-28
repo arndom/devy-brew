@@ -125,7 +125,7 @@ function Landing() {
                     {/* text */}
                     <div className = "landing__bannerLeft">
                         <div className = "landing__bannerLeftText">
-                            <h1>Devy brew ☕</h1>
+                            <h1>Devy brew {/* ☕ */}</h1>
                             <p>Get daily mails curated with articles from the most popular dev plattforms, fun games and geeky jokes. Make us part of your daily routine to stay informed and entertained.</p>
                         </div>
                         <Button 
