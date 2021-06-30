@@ -31,9 +31,9 @@
 }
 
 .featuredArticle__left > h4{
-    color: #1C7FF2;
+    color: rgba(149, 212, 207, 1);
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 800;
     letter-spacing: 0.055rem;
 }
 

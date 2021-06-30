@@ -8,6 +8,7 @@ import * as ROUTES from "../constants/routes"
 const useStyles = makeStyles({
 
     checked:{
+        marginBottom: ".75rem" ,
         '& .MuiCheckbox-colorPrimary.Mui-checked':{
             color: "#1C7FF2"
         }
@@ -56,122 +57,86 @@ function Subscribe() {
                 width = "90vw"
                 height = "100vh"
                 display = "flex"
-                justifyContent = "space-around"
-                marginTop = "25vh"
+                flexDirection = "column"
+                marginTop = "28vh"
             >
-                <Box
-                    marginTop = "12.5vh"  
-                >
-                    <h1>Make your choice</h1>
+                <Box display = "flex"
+                     flexDirection = "column"
+                     alignItems = "center"
+                     marginBottom =".7rem">
+                    <h1 style ={{fontSize: "3rem"}}>Subscribe to our newsletter</h1>
                 </Box>
-                
-                <Box>
-                    <FormGroup 
-                        className = {classes.checked}
-                    >
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    checked={checked.articles}
-                                    onChange={handleChange}
-                                    name="articles"
-                                    color="primary"
-                                />
-                            }
-                            label="articles"
-                        />
-                            <Box
-                                marginLeft = "20px"
-                                display= "flex"
-                                flexDirection = "column"
-                            >
-                                <FormControlLabel
-                                    control={
-                                        <Checkbox
-                                            checked={checked.devto}
-                                            onChange={handleChange}
-                                            name="devto"
-                                            color="primary"
-                                        />
-                                    }
-                                    label="dev.to"
-                                />
-                                <FormControlLabel
-                                    control={
-                                        <Checkbox
-                                            checked={checked.hashnode}
-                                            onChange={handleChange}
-                                            name="hashnode"
-                                            color="primary"
-                                        />
-                                    }
-                                    label="hashnode"
-                                />
-                                <FormControlLabel
-                                    control={
-                                        <Checkbox
-                                            checked={checked.producthunt}
-                                            onChange={handleChange}
-                                            name="producthunt"
-                                            color="primary"
-                                        />
-                                    }
-                                    label="producthunt"
-                                />
-                            </Box>
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    checked={checked.gameSection}
-                                    onChange={handleChange}
-                                    name="gameSection"
-                                    color="primary"
-                                />
-                            }
-                            label="games section"
-                        />
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    checked={checked.jokesSection}
-                                    onChange={handleChange}
-                                    name="jokesSection"
-                                    color="primary"
-                                />
-                            }
-                            label="jokes / comic strip"
-                        />
+
+                <Box display = "flex"
+                     flexDirection = "column"
+                     alignItems = "center" >
+                    {/* CHECKBOXES */}                            
+                    <FormGroup className = {classes.checked}>
+                        <Box
+                            // marginLeft = "20px"
+                            display= "flex"
+                            flexDirection = "row">
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        checked={checked.devto}
+                                        onChange={handleChange}
+                                        name="devto"
+                                        color="primary"
+                                    />
+                                }
+                                label="dev.to"
+                            />
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        checked={checked.hashnode}
+                                        onChange={handleChange}
+                                        name="hashnode"
+                                        color="primary"
+                                    />
+                                }
+                                label="hashnode"
+                            />
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        checked={checked.producthunt}
+                                        onChange={handleChange}
+                                        name="producthunt"
+                                        color="primary"
+                                    />
+                                }
+                                label="producthunt"
+                            />
+                        </Box>
                     </FormGroup>
-                </Box>
-            
-                
-                <Box
-                    display = "flex"
-                    flexDirection = "column"
-                    alignItems = "center"
-                    marginTop = "12.5vh"  
 
-                >
-                    <TextField
-                        className = {classes.texfield}
-                        placeholder = "enter your email"
-                        variant="outlined"
-                        style ={{
-                            width: "15rem",
-                            marginBottom: "20px"
-                        }}
-                    />
+                    {/* EMAIL */}
+                    <Box display = "flex"
+                        flexDirection = "column"
+                        alignItems = "center" >
 
-                    <Button 
-                        style={{
-                            color: "white",
-                            background: "#1C7FF2",
-                            textTransform: "none"
-                        }}
-                        onClick = {()=> history.push(ROUTES.SUBSCRIBE.FINAL)}
-                    >
-                            <MailOutlined/> Good 2 Go
-                    </Button>
+                        <TextField
+                            className = {classes.texfield}
+                            placeholder = "enter your email"
+                            variant="outlined"
+                            style ={{
+                                width: "18rem",
+                                marginBottom: "20px"
+                            }}
+                        />
+                        <Button 
+                            style={{
+                                color: "white",
+                                background: "#1C7FF2",
+                                textTransform: "none"
+                            }}
+                            onClick = {()=> history.push(ROUTES.SUBSCRIBE.FINAL)}
+                        >
+                                <MailOutlined style={{paddingRight: "5px"}}/> Good 2 Go
+                        </Button>
+                    </Box>
                 </Box>
 
             </Box>

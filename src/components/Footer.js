@@ -4,9 +4,9 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
     root:{
-        color: "white",
+        // color: "white",
         // background: "black",
-        background: "linear-gradient(to right, #000000, #434343)" 
+        // background: "linear-gradient(to bottom, #ffffff, #434343)" 
 
     }
 })
@@ -18,14 +18,14 @@ function Footer() {
         <Box
             className = {classes.root}
             width = "100%"
-            height = "8vh"
+            height = "12vh"
             display = "flex"
             justifyContent = "center"
             alignItems = "center"
             fontSize = "small"
             fontWeight = "500"
         >
-            <p>Built with 💖 by <a href="https://github.com/arndom" target = "_blank"  rel="noreferrer" style={{color: "white", textDecoration: "none"}}>arndom</a></p>
+            <p>Built with 🖤 by <a href="https://github.com/arndom" target = "_blank"  rel="noreferrer" style={{textDecoration: "underline", letterSpacing: "1.2px",color:"black"}}>arndom</a></p>
         </Box>
     )
 }
