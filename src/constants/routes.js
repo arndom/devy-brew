@@ -6,3 +6,5 @@ export const SUBSCRIBE= {
     INDEX: "/subscribe",
     FINAL: "/subscribe/finish"
 }
+
+export const PAPER = "/latest"

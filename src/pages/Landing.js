@@ -21,18 +21,13 @@ function Landing() {
     const [product, setProduct] = useState({});
     const dateNow = new Date().toLocaleDateString() 
 
-    const [devMarkdown, setDevMarkdown] = useState(``)
-    const [hashMarkdown, setHashMarkdown] = useState(``)
+
+
+    // const [state, dispatch] = useStateValue()
 
     async function fetchDev(){
         const response = await axios.get("https://dev.to/api/articles?top=1")
         setDev(response.data[0])
-    }
-
-    async function fetchDevMarkdown(id){
-        const response = await axios.get(`https://dev.to/api/articles/${id}`)
-        // console.log(response.data.body_markdown)
-        setDevMarkdown(response.data.body_markdown)
     }
 
     async function fetchHashnode(){
@@ -56,21 +51,6 @@ function Landing() {
             `
         })
         setHashnode(response.data.data.storiesFeed.filter( post =>post.author.publicationDomain !== "")[0])
-    }
-
-    async function fetchHashnodeMarkdown(slug, hostname){
-        const response =  await axios.post("https://api.hashnode.com/",{
-            query:`
-                query {
-                    post(slug: "${slug}", hostname: "${hostname}"){
-                    title
-                    cuid
-                    contentMarkdown
-                    }
-                }
-            `
-        })
-        setHashMarkdown(response.data.data.post.contentMarkdown)
     }
 
     async function fetchProduct(){
@@ -121,16 +101,8 @@ function Landing() {
         fetchProduct()
     },[])
 
-    useEffect(()=>{
-        fetchDevMarkdown(dev.id)
-    },[dev])
-
-    useEffect(()=>{
-        hashnode.author && fetchHashnodeMarkdown(hashnode.slug, hashnode.author.publicationDomain)
-    },[hashnode])
-
     return (
-        <div className = "landing">
+        <div className = "landing"> 
             {/* banner */}
             <div className = "landing__banner">
                 <div className = "container splitLR">
@@ -176,13 +148,13 @@ function Landing() {
                         <div className = "landing__latestRelease">
                             <div className = "landing__latestReleaseContent">
                                 <p className = "landing__latestReleaseTitle">
-                                    ☕ JOE CODE
+                                    ☕ CODE BREW
                                 </p>
                                 <p className = "landing__latestReleaseHeadline">
-                                    Temp issue headline
+                                    DAILIES
                                 </p>
                                 <p className = "landing__latestReleaseTagline">
-                                    <Link to = "/subscribe">
+                                    <Link to = "/latest">
                                         Read the latest issue <ArrowForward style={{marginLeft: ".5rem"}}/>
                                     </Link>
                                 </p>
