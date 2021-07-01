@@ -7,6 +7,12 @@ const useStyles = makeStyles({
         // color: "white",
         // background: "black",
         // background: "linear-gradient(to bottom, #ffffff, #434343)" 
+        // width: "100%",
+        // bottom: 0
+        display:"flex" ,
+        justifyContent: "flex-end",
+        flexDirection: 'column',
+        marginTop: "100vh"
 
     }
 })

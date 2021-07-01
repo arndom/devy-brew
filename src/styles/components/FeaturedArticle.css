@@ -2,68 +2,149 @@
     --opacity: 1;
 }
 
-.featuredArticle > a{
-    border-bottom: 1px solid #cacaca;
+@media only screen and (min-width: 1000px){
 
-    display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
-    margin: 0 0 20px 0;
-    padding: 0 20px 20px 20px;
-
-    color: black;
-    text-decoration: none;
-
-    height: 24vh;
+    .featuredArticle > a{
+        border-bottom: 1px solid #cacaca;
+    
+        display: flex;
+        justify-content: space-between;
+        /* align-items: center; */
+        margin: 0 0 20px 0;
+        padding: 0 20px 20px 20px;
+    
+        color: black;
+        text-decoration: none;
+    
+        height: 24vh;
+    }
+    
+    .featuredArticle > a:hover{
+        --opacity: 0.8;
+    }
+    
+    .featuredArticle__left{
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 50%;
+        /* margin:auto; */
+    }
+    
+    .featuredArticle__left > h4{
+        color: rgba(149, 212, 207, 1);
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 0.055rem;
+    }
+    
+    .featuredArticle__leftText{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    
+    .featuredArticle__leftInfo{
+        text-transform: uppercase;
+        color: #8898AA;
+        font-weight: 500;
+        letter-spacing: 0.055rem;
+        font-size: 0.7rem;
+    }
+    
+    .featuredArticle__right{
+    
+        display: flex;
+        align-items: center;
+    
+        width: 150px;
+        height: 150px;
+        opacity: var(--opacity)
+    }
+    
+    .featuredArticle__right > img{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    
+        border-radius: 5px;
+    }
+    
 }
 
-.featuredArticle > a:hover{
-    --opacity: 0.8;
-}
+@media only screen and (max-width: 1000px){
 
-.featuredArticle__left{
+    .featuredArticle > a{
+        border-bottom: 1px solid #cacaca;
+    
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        /* align-items: center; */
+        margin: 0 0 20px 0;
+        /* padding: 0 20px 20px 20px; */
+    
+        color: black;
+        text-decoration: none;
+        padding: .5rem;
+    
+        /* height: 24vh; */
+    }
+    
+    .featuredArticle > a:hover{
+        --opacity: 0.8;
+    }
+    
+    .featuredArticle__left{
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        /* margin:auto; */
+    }
+    
+    .featuredArticle__left > h4{
+        color: rgba(149, 212, 207, 1);
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 0.055rem;
+        padding: .5rem;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 50%;
-    /* margin:auto; */
-}
-
-.featuredArticle__left > h4{
-    color: rgba(149, 212, 207, 1);
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.055rem;
-}
-
-.featuredArticle__leftText{
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.featuredArticle__leftInfo{
-    text-transform: uppercase;
-    color: #8898AA;
-    font-weight: 500;
-    letter-spacing: 0.055rem;
-    font-size: 0.7rem;
-}
-
-.featuredArticle__right{
-
-    display: flex;
-    align-items: center;
-
-    width: 150px;
-    height: 150px;
-    opacity: var(--opacity)
-}
-
-.featuredArticle__right > img{
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-
-    border-radius: 5px;
+    }
+    
+    .featuredArticle__leftText{
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: center;
+        padding: .5rem;
+    }
+    
+    .featuredArticle__leftInfo{
+        text-transform: uppercase;
+        color: #8898AA;
+        font-weight: 500;
+        letter-spacing: 0.055rem;
+        font-size: 0.7rem;
+    }
+    
+    .featuredArticle__right{
+    
+        display: flex;
+        align-items: center;
+    
+        width: 100%;
+        height: 150px;
+        opacity: var(--opacity)
+    }
+    
+    .featuredArticle__right > img{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    
+        border-radius: 5px;
+    }
+    
 }

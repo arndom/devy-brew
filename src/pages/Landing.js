@@ -8,7 +8,7 @@ import { Link, useHistory } from 'react-router-dom'
 // import ReactMarkdown from "react-markdown";
 
 import FeaturedArticle from '../components/FeaturedArticle'
-import Footer from '../components/Footer'
+// import Footer from '../components/Footer'
 
 const producthuntKey =  process.env.REACT_APP_PRODUCTHUNT_KEY;
 
@@ -200,9 +200,8 @@ function Landing() {
                 </div>
 
             </div>
-
             {/* footer component*/}
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     )
 }

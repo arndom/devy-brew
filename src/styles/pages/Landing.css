@@ -2,172 +2,347 @@
 
 } */
 
-.splitLR{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;  
-}
-
-.container{
-    width: 88vw;
-    height: 100%;
-}
-
-
-
-.landing__banner{
-    background: linear-gradient(to bottom, rgba(149, 212, 207, 0.2), #C7C8D9, #ffffff);
-    /* background: linear-gradient(to right, #085078, #85D8CE); */
-    /* background: linear-gradient(to right, #2BC0E4, #EAECC6); */
-
-    color: #ffffff;
-
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.landing__bannerLeft{
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    height: 80%;
-    width: 50%;
-    margin-left:5%;
-    text-shadow: 1px 1px 10px rgba(0,0,0, 0.5);
-}
-
-.landing__bannerLeftText{
-    margin-bottom: 20px;
-}
-
-.landing__bannerLeftText > h1{
-    font-size: 3rem;
-    /* font-weight: 600; */
-    margin-bottom: 10px;
-}
-
-.landing__bannerLeftText > p{
-    width: 85%;
-    /* font-size: .8rem; */
-    font-weight: 300;
-}
-
-.landing__bannerRight{
-    background-color: white;
-
-    background-image: url("https://picsum.photos/id/755/1000");
-    background-size:     cover;        
-    background-repeat:   no-repeat;
-    background-position: center center;
-
-    border-radius: 10px; 
-    width:50%;
-    height:80%;
-}
-
-.landing__features{
-    height: 100vh;
-    margin-top: 20px;
-    margin-bottom: 3rem;
-    /* display: none; */
-}
-
-.landing__articles{
-    margin-top: 50px;
-
-    display: flex;
-    justify-content: center;
-
-    height: 100%;
-
-    /* background-color: papayawhip; */
-}
-
-.landing__latestRelease{
-    border: 0px solid black;
-    border-radius: 5px;
-    background: #1C7FF2;
-    box-shadow:  0px 6px 18px -9px rgba(0,0,0, 0.75);
-
-    background-image: url("https://picsum.photos/1000");
-    background-size:     cover;        
-    background-repeat:   no-repeat;
-    background-position: center center;
-   
-    width: 62%;
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.landing__latestReleaseContent{
-    background-color: whitesmoke;
-    color: black;
-    border-radius: 5px;
+@media only screen and (min-width: 1000px){
+    .splitLR{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  
+    }
     
-    margin: 0 2.5% 2.5% 2.5%;
-
-    width: 100%;
-    height: 25%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 25px;
+    .container{
+        width: 88vw;
+        height: 100%;
+    }
+    
+    
+    
+    .landing__banner{
+        background: linear-gradient(to bottom, rgba(149, 212, 207, 0.2), #C7C8D9, #ffffff);
+        /* background: linear-gradient(to right, #085078, #85D8CE); */
+        /* background: linear-gradient(to right, #2BC0E4, #EAECC6); */
+    
+        color: #ffffff;
+    
+        height: 100vh;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .landing__bannerLeft{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        height: 80%;
+        width: 50%;
+        margin-left:5%;
+        text-shadow: 1px 1px 10px rgba(0,0,0, 0.5);
+    }
+    
+    .landing__bannerLeftText{
+        margin-bottom: 20px;
+    }
+    
+    .landing__bannerLeftText > h1{
+        font-size: 3rem;
+        /* font-weight: 600; */
+        margin-bottom: 10px;
+    }
+    
+    .landing__bannerLeftText > p{
+        width: 85%;
+        /* font-size: .8rem; */
+        font-weight: 300;
+    }
+    
+    .landing__bannerRight{
+        background-color: white;
+    
+        background-image: url("https://picsum.photos/id/755/1000");
+        background-size:     cover;        
+        background-repeat:   no-repeat;
+        background-position: center center;
+    
+        border-radius: 10px; 
+        width:50%;
+        height:80%;
+    }
+    
+    .landing__features{
+        height: 100vh;
+        margin-top: 20px;
+        margin-bottom: 3rem;
+        /* display: none; */
+    }
+    
+    .landing__articles{
+        margin-top: 50px;
+    
+        display: flex;
+        justify-content: center;
+    
+        height: 100%;
+    
+        /* background-color: papayawhip; */
+    }
+    
+    .landing__latestRelease{
+        border: 0px solid black;
+        border-radius: 5px;
+        background: #1C7FF2;
+        box-shadow:  0px 6px 18px -9px rgba(0,0,0, 0.75);
+    
+        background-image: url("https://picsum.photos/1000");
+        background-size:     cover;        
+        background-repeat:   no-repeat;
+        background-position: center center;
+       
+        width: 62%;
+        height: 100%;
+    
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    
+    .landing__latestReleaseContent{
+        background-color: whitesmoke;
+        color: black;
+        border-radius: 5px;
+        
+        margin: 0 2.5% 2.5% 2.5%;
+    
+        width: 100%;
+        height: 25%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 25px;
+    }
+    
+    .landing__latestReleaseTitle{
+        font-weight: 800;
+        font-size: 1.15rem;
+        letter-spacing: 0.055rem;
+        color: rgba(149, 212, 207, 1);
+    }
+    
+    .landing__latestReleaseTagline > a{
+        display: flex;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #66727e;
+        text-decoration: none;
+    }
+    
+    .landing__latestReleaseDate{
+        color: #95A0AB;
+        font-weight: 500;
+        letter-spacing: 0.055rem;
+        font-size: 0.8rem;
+    }
+    
+    .landing__latestReleaseHeadline{
+        font-size: 1.8rem;
+        /* margin-bottom: 0.75rem; */
+        line-height: 1.25;
+        font-weight: 600;
+    }
+    
+    
+    
+    .landing__featuredArticles{
+        /* display:"flex";
+        flex-direction:"column";
+        justify-content: "space-between"; */
+    
+        width: 37%;
+        height: 100%;
+    }
+    
+    .landing__featuredArticles > h1{
+        /* margin: 0 0 20px 0; */
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        line-height: 1.25;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+    
 }
 
-.landing__latestReleaseTitle{
-    font-weight: 800;
-    font-size: 1.15rem;
-    letter-spacing: 0.055rem;
-    color: rgba(149, 212, 207, 1);
-}
+@media only screen and (max-width: 1000px){
+    .splitLR{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;  
 
-.landing__latestReleaseTagline > a{
-    display: flex;
-    align-items: center;
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #66727e;
-    text-decoration: none;
-}
+    }
+    
+    .container{
+        width: 95vw;
+        height: 100%;
+    }
+    
+    .landing__banner{
+        background: linear-gradient(to bottom, rgba(149, 212, 207, 0.2), #C7C8D9, #ffffff);
+    
+        color: #ffffff;
+    
+        height:80vh;
+        width: 100%;
+    
+        display: flex;
+        justify-content: center;
+        align-items: space-between;
 
-.landing__latestReleaseDate{
-    color: #95A0AB;
-    font-weight: 500;
-    letter-spacing: 0.055rem;
-    font-size: 0.8rem;
-}
+        /* margin-bottom: 2rem; */
 
-.landing__latestReleaseHeadline{
-    font-size: 1.8rem;
-    /* margin-bottom: 0.75rem; */
-    line-height: 1.25;
-    font-weight: 600;
-}
+    }
+    
+    .landing__bannerLeft{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        /* height: 80%; */
+        width: 100%;
+        /* margin-left:5%; */
+        text-shadow: 1px 1px 10px rgba(0,0,0, 0.5);
+        text-align: center;
 
+    }
+    
+    .landing__bannerLeftText{
+        margin-bottom: 2rem;
+    }
+    
+    .landing__bannerLeftText > h1{
+        font-size: 3rem;
+        /* font-weight: 600; */
+        margin-bottom: 10px;
+    }
+    
+    .landing__bannerLeftText > p{
+        /* width: 85%; */
+        /* font-size: .8rem; */
+        font-weight: 300;
+    }
+    
+    .landing__bannerRight{
+        background-color: white;
+    
+        background-image: url("https://picsum.photos/id/755/1000");
+        background-size:     cover;        
+        background-repeat:   no-repeat;
+        background-position: center center;
+    
+        border-radius: 10px; 
+        width:100%;
+        height:50%;
+    }
+    
+    .landing__features{
+        height: 100vh;
+        /* margin-top: 20px; */
+        margin-bottom: 3rem;
+        /* display: none; */
+    }
+    
+    .landing__articles{
+        /* margin-top: 50px; */
+    
+        display: flex;
+        justify-content: center;
+    
+        height: 100%;
+    }
+    
+    .landing__latestRelease{
+        border: 0px solid black;
+        border-radius: 5px;
+        background: #1C7FF2;
+        box-shadow:  0px 6px 18px -9px rgba(0,0,0, 0.75);
+    
+        background-image: url("https://picsum.photos/1000");
+        background-size:     cover;        
+        background-repeat:   no-repeat;
+        background-position: center center;
+       
+        width: 100%;
+        height: 60vh;
+    
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
 
+        /* margin-bottom: 2rem; */
+    }
+    
+    .landing__latestReleaseContent{
+        background-color: whitesmoke;
+        color: black;
+        border-radius: 5px;
+        
+        margin: 0 2.5% 2.5% 2.5%;
+    
+        width: 100%;
+        height: 25%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 25px;
+    }
+    
+    .landing__latestReleaseTitle{
+        font-weight: 800;
+        font-size: 1.15rem;
+        letter-spacing: 0.055rem;
+        color: rgba(149, 212, 207, 1);
+    }
+    
+    .landing__latestReleaseTagline > a{
+        display: flex;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #66727e;
+        text-decoration: none;
+    }
+    
+    .landing__latestReleaseDate{
+        color: #95A0AB;
+        font-weight: 500;
+        letter-spacing: 0.055rem;
+        font-size: 0.8rem;
+    }
+    
+    .landing__latestReleaseHeadline{
+        font-size: 1.8rem;
+        /* margin-bottom: 0.75rem; */
+        line-height: 1.25;
+        font-weight: 600;
+    }
+    
 
-.landing__featuredArticles{
-    /* display:"flex";
-    flex-direction:"column";
-    justify-content: "space-between"; */
-
-    width: 37%;
-    height: 100%;
-}
-
-.landing__featuredArticles > h1{
-    /* margin: 0 0 20px 0; */
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    line-height: 1.25;
-    font-weight: 600;
-    margin-top: 1rem;
+    .landing__featuredArticles{    
+        width: 100%;
+        height: 20%;
+    }
+    
+    .landing__featuredArticles > h1{
+        /* margin: 0 0 20px 0; */
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        line-height: 1.25;
+        font-weight: 600;
+        /* margin-top: 1rem; */
+    }
+    
 }
 
