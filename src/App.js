@@ -18,7 +18,7 @@ function ScrollToTop() {
 }
 
 function App() {
-  <script type="text/javascript" src="https://CrosswordHobbyist.com/embedjs?puzzle_id=262"></script>
+  
 
   return (
     <div className="app">

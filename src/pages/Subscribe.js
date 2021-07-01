@@ -1,9 +1,12 @@
 import { Box, Button, TextField, FormGroup, FormControlLabel, Checkbox, makeStyles} from '@material-ui/core'
 import { MailOutlined} from '@material-ui/icons'
-import React from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useState } from 'react'
+// import { useHistory } from 'react-router-dom'
 import Footer from '../components/Footer'
-import * as ROUTES from "../constants/routes"
+// import * as ROUTES from "../constants/routes"
+// import MailchimpSubscribe from "react-mailchimp-subscribe"
+import axios from 'axios'
+// import { useForm } from 'react-hook-form';
 
 const useStyles = makeStyles({
 
@@ -27,11 +30,70 @@ const useStyles = makeStyles({
     
 })
 
+
+
 function Subscribe() {
 
     const classes = useStyles()
 
-    const history = useHistory();
+    // const history = useHistory();
+
+    const [text, setText] = useState('');
+
+    // const { register, handleSubmit, errors } = useForm({
+	// 	mode: 'onChange',
+	// 	reValidateMode: 'onChange',
+	// 	defaultValues: {
+	// 	  email: '',
+	// 	  password: '',
+	// 	},
+	// });
+
+    // const [data, loading, error, refresh] = useHarperDB({
+    //     query: { operation: 'sql', sql: `select * from mailList.Mail` },
+    //   });
+
+
+
+    async function insert(text){
+        const response = await axios.post(process.env.REACT_APP_HARPER_URL,{
+            operation: "insert",
+            schema: "mailList",
+            table: "Mail",
+            records: [
+              {
+                email: `${text}`
+              },
+            ],
+        },
+        {
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Basic ${process.env.REACT_APP_HARPER_PASS}`,
+            }
+        })
+        console.log(response)
+    }
+
+    // async function getMails(){
+    //     const response = await axios.post(process.env.REACT_APP_HARPER_URL,{
+    //         operation: "sql",
+    //         "sql": "SELECT email FROM mailList.Mail"
+    //     },
+    //     {
+    //         headers:{
+    //             "Content-Type": "application/json",
+    //             Authorization: `Basic ${process.env.REACT_APP_HARPER_PASS}`,
+    //         }
+    //     })
+    //     console.log(response.data)
+    // }
+
+    function handleClick(text){
+
+        insert(text)
+        // history.push(ROUTES.SUBSCRIBE.FINAL)
+    }
     
     const [checked, setChecked] = React.useState({
         articles: true,
@@ -46,6 +108,10 @@ function Subscribe() {
         setChecked({ ...checked, [event.target.name]: event.target.checked });
     };
 
+    // const onSubmit = () => {
+	// 	alert("form submitted")
+	// }
+
     return (
         <Box
             display = "flex"
@@ -53,6 +119,7 @@ function Subscribe() {
             justifyContent = "center"
             alignItems = "center"
         >
+
             <Box
                 width = "90vw"
                 height = "100vh"
@@ -64,7 +131,7 @@ function Subscribe() {
                      flexDirection = "column"
                      alignItems = "center"
                      marginBottom =".7rem">
-                    <h1 style ={{fontSize: "3rem"}}>Subscribe to our newsletter</h1>
+                    <h1 style ={{fontSize: "3rem"}}>Subscribe to devy brew</h1>
                 </Box>
 
                 <Box display = "flex"
@@ -116,26 +183,41 @@ function Subscribe() {
                     <Box display = "flex"
                         flexDirection = "column"
                         alignItems = "center" >
+                        
+                        <form action={process.env.REACT_APP_MAILCHIMP_URL} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"  noValidate style ={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+                            <TextField
+                                className = {classes.texfield}
+                                placeholder = "enter your email"
+                                variant="outlined"
+                                name="EMAIL" id="mce-EMAIL"
+                                style ={{
+                                    width: "18rem",
+                                    marginBottom: "20px"
+                                }}
+                                onChange ={(e)=>{
+                                    e.preventDefault()
+                                    setText(e.target.value)
+                                }}
+                            />
+                                {/* <MailchimpSubscribe EMAIL ={text} url={process.env.REACT_APP_MAILCHIMP_URL} /> */}
 
-                        <TextField
-                            className = {classes.texfield}
-                            placeholder = "enter your email"
-                            variant="outlined"
-                            style ={{
-                                width: "18rem",
-                                marginBottom: "20px"
-                            }}
-                        />
-                        <Button 
-                            style={{
-                                color: "white",
-                                background: "#1C7FF2",
-                                textTransform: "none"
-                            }}
-                            onClick = {()=> history.push(ROUTES.SUBSCRIBE.FINAL)}
-                        >
-                                <MailOutlined style={{paddingRight: "5px"}}/> Good 2 Go
-                        </Button>
+                                {console.log(text)}
+
+                            <Button 
+                                type = "submit"
+                                style={{
+                                    color: "white",
+                                    background: "#1C7FF2",
+                                    textTransform: "none",
+                                    width : "10rem"
+                                }}
+                                onClick = {()=> handleClick(text) }
+                            >
+                                    <MailOutlined style={{paddingRight: "5px"}}/> Good 2 Go
+                            </Button>
+
+                        </form>
+
                     </Box>
                 </Box>
 
