@@ -14,10 +14,10 @@ This was built with:
 
 # Features ⚡
 
-* Articles from:
-  * hashnode
-  * dev.to
-  * producuts from **ProductHunt**
+* Featured articles from:
+  * **Hashnode**
+  * **Dev.to**
+* Producuts from **ProductHunt**
 
 # Future Features 🚀
 
@@ -32,7 +32,7 @@ This was built with:
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-1. Fork it ([https://github.com/arndom/dev-brew/fork](https://github.com/arndom/dev-brew/fork))
+1. Fork it ([https://github.com/arndom/devy-brew/fork](https://github.com/arndom/devy-brew/fork))
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
